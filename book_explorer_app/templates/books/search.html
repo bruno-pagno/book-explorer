@@ -5,27 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Results for {{ query }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'books/search.css' %}">
 </head>
 <body>
-    {% if total %}
-    <h1>{{ total }} Results for "{{ query }}"</h1>
-        {% if books %}
-            <p>Showing first {{ number_of_books }} books</p>
-            <ul>
-            {% for book in books %}
-                <div>
-                    <a href="/books/search/{{query}}/details/{{ book.id }}">
-                    <h3>{{ book.volumeInfo.title }}</h3>
-                    <img src="{{ book.volumeInfo.imageLinks.smallThumbnail }}" alt="{{ book.volumeInfo.title }} cover">
-                    </a>
+    <div class="wrapper">
+        <div class="back-to-search">
+            <button>
+                <a href="/books/">Back to search</a>
+            </button>
+        </div>
+        {% if total %}
+        <div class="results-information">
+            <h1>{{ total }} Results for "{{ query }}"</h1>
+        </div>
+            {% if books %}
+                <div class="results-information">
+                    <p>Showing first {{ number_of_books }} books</p>
                 </div>
-            {% endfor %}
-            </ul>
+                <ul class="results">
+                {% for book in books %}
+                    <div class="book">
+                        <a class="image" href="/books/search/{{query}}/details/{{ book.id }}">
+                            <img src="{{ book.volumeInfo.imageLinks.smallThumbnail }}" alt="{{ book.volumeInfo.title }} cover">
+                        </a>
+                        <div>
+                            <a href="/books/search/{{query}}/details/{{ book.id }}">
+                                <h3>{{ book.volumeInfo.title }}</h3>
+                            </a>
+                            <a href="/books/search/{{query}}/details/{{ book.id }}">
+                                <h3>{{ book.volumeInfo.authors.0 }}</h3>
+                            </a>
+                            <p>{{ book.volumeInfo.description }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <p>No books found</p>
+            {% endif %}
         {% else %}
-            <p>No books found</p>
+            <h1>No results for "{{ query }}".</h1>
         {% endif %}
-    {% else %}
-        <h1>No results for "{{ query }}".</h1>
-    {% endif %}
+    </div>
 </body>
 </html>
