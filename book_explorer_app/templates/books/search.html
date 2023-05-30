@@ -7,6 +7,7 @@
     <title>Results for {{ query }}</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'books/search.css' %}">
+    <link rel="icon" href="{% static 'books/favicon.png' %}" type="image/png">
 </head>
 <body>
     <div class="wrapper">
@@ -26,14 +27,14 @@
                 <ul class="results">
                 {% for book in books %}
                     <div class="book">
-                        <a class="image" href="/books/search/{{query}}/details/{{ book.id }}">
+                        <a class="image" href="/books/search/details/{{ book.id }}?q={{ query }}">
                             <img src="{{ book.volumeInfo.imageLinks.smallThumbnail }}" alt="{{ book.volumeInfo.title }} cover">
                         </a>
                         <div>
-                            <a href="/books/search/{{query}}/details/{{ book.id }}">
+                            <a href="/books/search/details/{{ book.id }}?q={{ query }}">
                                 <h3>{{ book.volumeInfo.title }}</h3>
                             </a>
-                            <a href="/books/search/{{query}}/details/{{ book.id }}">
+                            <a href="/books/search/details/{{ book.id }}?q={{ query }}">
                                 <h3>{{ book.volumeInfo.authors.0 }}</h3>
                             </a>
                             <p>{{ book.volumeInfo.description }}</p>

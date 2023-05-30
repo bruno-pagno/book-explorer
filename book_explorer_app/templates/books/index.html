@@ -4,23 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Books Explorer</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'books/index.css' %}">
-    <script>
-        function redirectToSearch() {
-            var query = document.getElementById("query").value;
-            var url = "/books/search/" + query;
-            window.location.href = url;
-        }
-    </script>
+    <link rel="icon" href="{% static 'books/favicon.png' %}" type="image/png">
+    <title>Books Explorer</title>
 </head>
 <body>
     <div class="wrapper">
         <div class="search-box">
             <h1>Books Explorer</h1>
-            <form onsubmit="redirectToSearch(); return false;">
-                <input type="text" name="query" id="query" placeholder="Search for a book name">
+            <form action="{% url 'search' %}" method="GET">
+                <input type="text" name="q" placeholder="Search for a book name">
                 <button type="submit">Search</button>
             </form>
         </div>        

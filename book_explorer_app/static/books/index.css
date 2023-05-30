@@ -16,8 +16,24 @@ html, body {
     align-items: center;
 }
 
+.wrapper .search-box {
+    background-color: rgba(90, 70, 60, 0.8);
+    padding: 10px;
+    border: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 10%;
+    min-height: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.9);
+    min-width: 300px;
+}
+
 .wrapper .search-box h1 {
     color: white;
+    margin-top: 0;
 }
 
 .wrapper .search-box form input {
