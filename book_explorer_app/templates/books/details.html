@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     {% load static %}
     <link rel="stylesheet" href="{% static 'books/details.css' %}">
     <link rel="icon" href="{% static 'books/favicon.png' %}" type="image/png">
@@ -11,11 +14,10 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="back-to-results">
-            <button>
-                <a href="/books/search?q={{ query }}">Back to results</a>
-            </button>
-        </div>
+        <nav class="nav-bar">
+            <a href="/books"><img src="{% static 'books/logo.png' %}" alt="logo" alt="book icon"></a>
+            <a href="/books"><h1>Books Explorer</h1></a>
+        </nav>
         <div class="book-information">
             <div class="image">
                 <img src={{ cover_image_url }} alt="">

@@ -1,3 +1,7 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
 html, body {
     height: 100%;
     margin: 0;
@@ -31,9 +35,20 @@ html, body {
     min-width: 300px;
 }
 
+.wrapper .search-box .logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper .search-box img {
+    width: 30px;
+    height: 30px;
+}
+
 .wrapper .search-box h1 {
     color: white;
-    margin-top: 0;
 }
 
 .wrapper .search-box form input {

@@ -1,3 +1,7 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -13,36 +17,29 @@ html, body {
     background-repeat: no-repeat;
 }
 
-.wrapper .back-to-results {
+.wrapper nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 10px;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(90, 70, 60, 0.8);
+    border: 1px solid #ccc;
 }
 
-.wrapper .back-to-results button a {
+.wrapper a {
     text-decoration: none;
-    color: black;
-}
-
-.wrapper .back-to-results button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: white;
-    border-radius: 4px;
-    border: none;
-    text-decoration: none;
-    text-align: center;
-    cursor: pointer;
+    padding: 0 10px;
+    color: white;
 }
 
 .wrapper .book-information {
     color: white;
     display: flex;
     flex-direction: row;
-    background-color: rgba(90, 70, 60, 0.5);
     margin: 40px 20px;
+    background-color: rgba(90, 70, 60, 0.8);
+    border: 1px solid #ccc;
 }
 
 .wrapper .book-information .image {

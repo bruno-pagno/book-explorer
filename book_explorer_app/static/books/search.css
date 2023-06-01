@@ -1,3 +1,7 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -14,30 +18,23 @@ html {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    padding-bottom: 20px;
 }
 
-.wrapper .back-to-search {
+.wrapper nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 10px;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(90, 70, 60, 0.8);
+    border: 1px solid #ccc;
 }
 
-.wrapper .back-to-search button a {
+.wrapper a {
     text-decoration: none;
-    color: black;
-}
-
-.wrapper .back-to-search button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: white;
-    border-radius: 4px;
-    border: none;
-    text-decoration: none;
-    text-align: center;
-    cursor: pointer;
+    padding: 0 10px;
+    color: white;
 }
 
 .wrapper .results-information {
@@ -45,6 +42,10 @@ html {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.wrapper .results-information h1 {
+    margin-top: 20px;
 }
 
 .wrapper .results-information h1, p {
@@ -57,7 +58,7 @@ html {
     margin: 10px;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 10px;
     display: flex;
     background-color: rgba(90, 70, 60, 0.8);
 }
