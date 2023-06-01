@@ -74,3 +74,16 @@ html {
     text-align: center;
     padding: 20px;
 }
+
+footer {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+footer a {
+    text-decoration: underline;
+    color: white;
+}
